@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using CleanArchitecture.Infrastructure.Data.Context;
+using CleanArchitecture.Infrastructure.IoC;
 
 namespace CleanArchitecture.MVC
 {
@@ -32,9 +33,11 @@ namespace CleanArchitecture.MVC
                    Configuration.GetConnectionString("UniversityDb"));
             });
                
-
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddDataServices();
+            services.AddApplicationServices();
 
             services.AddControllersWithViews();
             services.AddRazorPages();

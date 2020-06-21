@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CleanArchitecture.Application.Interfaces
 {
-    interface ICourseService
+    public interface ICourseService
     {
         CourseViewModel GetCourses();
     }
