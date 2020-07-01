@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CleanArchitecture.Domain.Core\CleanArchitecture.Domain.Core.csproj" />
+    <PackageReference Include="MediatR" Version="8.0.2" />
   </ItemGroup>
 
 </Project>
