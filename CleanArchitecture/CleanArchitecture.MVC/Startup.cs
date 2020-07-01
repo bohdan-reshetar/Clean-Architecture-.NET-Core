@@ -6,8 +6,8 @@ using CleanArchitecture.MVC.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using CleanArchitecture.Infrastructure.Data.Context;
 using CleanArchitecture.Infrastructure.IoC;
+using CleanArchitecture.Infrastructure.Data.Context;
 
 namespace CleanArchitecture.MVC
 {
