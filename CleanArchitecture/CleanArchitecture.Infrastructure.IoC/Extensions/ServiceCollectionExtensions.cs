@@ -8,12 +8,21 @@ using CleanArchitecture.Infrastructure.Bus;
 using CleanArchitecture.Infrastructure.Data.Context;
 using CleanArchitecture.Infrastructure.Data.Repositories;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
-namespace CleanArchitecture.Infrastructure.IoC
+namespace CleanArchitecture.Infrastructure.IoC.Extensions
 {
     public static class ServiceCollectionExtensions
     {
+        public static void AddUniversityDbContext(this IServiceCollection services, string connectionString)
+        {
+            services.AddDbContext<UniversityDbContext>(options =>
+            {
+                options.UseSqlServer(connectionString);
+            });
+        }
         public static void AddApplicationServices(this IServiceCollection services)
         {
             // Application Layer
@@ -28,9 +37,8 @@ namespace CleanArchitecture.Infrastructure.IoC
             //Domain Handlers
             services.AddScoped<IRequestHandler<CreateCourseCommand, bool>, CourseCommandHandler>();
 
-            // Infrastructure.Data Layer
+            //Infrastructure.Data Layer
             services.AddScoped<ICourseRepository, CourseRepository>();
-            services.AddScoped<UniversityDbContext>();
         }
     }
 }

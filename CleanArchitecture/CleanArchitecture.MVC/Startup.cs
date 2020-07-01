@@ -6,8 +6,8 @@ using CleanArchitecture.MVC.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using CleanArchitecture.Infrastructure.IoC;
-using CleanArchitecture.Infrastructure.Data.Context;
+using CleanArchitecture.Infrastructure.IoC.Extensions;
+using MediatR;
 
 namespace CleanArchitecture.MVC
 {
@@ -23,18 +23,16 @@ namespace CleanArchitecture.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddMediatR(typeof(Startup));
+
+            services.AddUniversityDbContext(Configuration.GetConnectionString("UniversityDb"));
+
+            services.AddDbContext<IdentityDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("UniversityIdentityDb")));
-
-            services.AddDbContext<UniversityDbContext>(options =>
-            {
-                options.UseSqlServer(
-                   Configuration.GetConnectionString("UniversityDb"));
-            });
-               
+         
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<IdentityDbContext>();
 
             services.AddDataServices();
             services.AddApplicationServices();
