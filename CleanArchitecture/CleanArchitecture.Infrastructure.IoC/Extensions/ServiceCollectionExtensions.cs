@@ -1,4 +1,6 @@
-﻿using CleanArchitecture.Application.Interfaces;
+﻿using AutoMapper;
+using CleanArchitecture.Application.AutoMapper.Profiles;
+using CleanArchitecture.Application.Interfaces;
 using CleanArchitecture.Application.Services;
 using CleanArchitecture.Domain.CommandHandlers;
 using CleanArchitecture.Domain.Commands;
@@ -10,9 +12,6 @@ using CleanArchitecture.Infrastructure.Data.Repositories;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-using AutoMapper;
-using CleanArchitecture.Application.AutoMapper.Configuration;
 
 namespace CleanArchitecture.Infrastructure.IoC.Extensions
 {
@@ -20,9 +19,11 @@ namespace CleanArchitecture.Infrastructure.IoC.Extensions
     {
         public static void AddAutoMapper(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(AutoMapperConfiguration));
+            services.AddAutoMapper(typeof(DomainToViewModelProfile),
+                typeof(ViewModelToDomainProfile));
             //AutoMapperConfiguration.RegisterMappings();
         }
+
         public static void AddUniversityDbContext(this IServiceCollection services, string connectionString)
         {
             services.AddDbContext<UniversityDbContext>(options =>
@@ -30,6 +31,7 @@ namespace CleanArchitecture.Infrastructure.IoC.Extensions
                 options.UseSqlServer(connectionString);
             });
         }
+
         public static void AddApplicationServices(this IServiceCollection services)
         {
             // Application Layer

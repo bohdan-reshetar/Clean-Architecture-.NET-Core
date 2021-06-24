@@ -1,13 +1,13 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
+using CleanArchitecture.Infrastructure.IoC.Extensions;
 using CleanArchitecture.MVC.Data;
+using MediatR;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using CleanArchitecture.Infrastructure.IoC.Extensions;
-using MediatR;
 
 namespace CleanArchitecture.MVC
 {
@@ -32,7 +32,7 @@ namespace CleanArchitecture.MVC
             services.AddDbContext<IdentityDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("UniversityIdentityDb")));
-         
+
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<IdentityDbContext>();
 

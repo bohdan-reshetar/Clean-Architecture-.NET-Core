@@ -1,7 +1,5 @@
-﻿using CleanArchitecture.Domain.Core.Events;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using CleanArchitecture.Domain.Core.Events;
 
 namespace CleanArchitecture.Domain.Core.Commands
 {

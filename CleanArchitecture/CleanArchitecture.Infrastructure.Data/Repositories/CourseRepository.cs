@@ -1,9 +1,7 @@
-﻿using CleanArchitecture.Domain.Interfaces;
+﻿using System.Collections.Generic;
+using CleanArchitecture.Domain.Interfaces;
 using CleanArchitecture.Domain.Models;
 using CleanArchitecture.Infrastructure.Data.Context;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CleanArchitecture.Infrastructure.Data.Repositories
 {

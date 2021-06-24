@@ -34,7 +34,6 @@ namespace CleanArchitecture.API
             services.AddDataServices();
             services.AddApplicationServices();
 
-
             services.AddControllers();
         }
 

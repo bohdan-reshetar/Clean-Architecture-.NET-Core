@@ -1,12 +1,9 @@
-﻿using CleanArchitecture.Domain.Commands;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using CleanArchitecture.Domain.Commands;
 using CleanArchitecture.Domain.Interfaces;
 using CleanArchitecture.Domain.Models;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace CleanArchitecture.Domain.CommandHandlers
 {

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CleanArchitecture.Application.Interfaces;
- using Microsoft.AspNetCore.Authorization;
+﻿using CleanArchitecture.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitecture.MVC.Controllers

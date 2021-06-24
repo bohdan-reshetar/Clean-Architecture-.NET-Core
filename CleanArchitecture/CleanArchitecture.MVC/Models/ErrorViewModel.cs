@@ -1,5 +1,3 @@
-using System;
-
 namespace CleanArchitecture.MVC.Models
 {
     public class ErrorViewModel

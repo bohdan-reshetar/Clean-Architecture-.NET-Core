@@ -1,9 +1,6 @@
 ﻿using AutoMapper;
 using CleanArchitecture.Application.ViewModels;
 using CleanArchitecture.Domain.Commands;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CleanArchitecture.Application.AutoMapper.Profiles
 {

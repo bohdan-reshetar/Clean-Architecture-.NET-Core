@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CleanArchitecture.Application.Interfaces;
+﻿using CleanArchitecture.Application.Interfaces;
 using CleanArchitecture.Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace CleanArchitecture.API.Controllers
 {

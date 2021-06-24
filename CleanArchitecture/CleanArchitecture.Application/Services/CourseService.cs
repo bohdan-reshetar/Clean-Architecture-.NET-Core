@@ -1,11 +1,10 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using CleanArchitecture.Application.Interfaces;
 using CleanArchitecture.Application.ViewModels;
 using CleanArchitecture.Domain.Commands;
 using CleanArchitecture.Domain.Core.Bus;
 using CleanArchitecture.Domain.Interfaces;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace CleanArchitecture.Application.Services
 {

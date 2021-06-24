@@ -1,11 +1,7 @@
-﻿using CleanArchitecture.Domain.Core.Bus;
+﻿using System.Threading.Tasks;
+using CleanArchitecture.Domain.Core.Bus;
 using CleanArchitecture.Domain.Core.Commands;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CleanArchitecture.Infrastructure.Bus
 {
@@ -18,7 +14,7 @@ namespace CleanArchitecture.Infrastructure.Bus
             _mediator = mediator;
         }
 
-        public Task SendCommand<T> (T command) where T : Command
+        public Task SendCommand<T>(T command) where T : Command
         {
             return _mediator.Send(command);
         }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CleanArchitecture.Domain.Commands
+﻿namespace CleanArchitecture.Domain.Commands
 {
     public class CreateCourseCommand : CourseCommand
     {

@@ -1,5 +1,5 @@
-﻿using CleanArchitecture.Domain.Core.Commands;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using CleanArchitecture.Domain.Core.Commands;
 
 namespace CleanArchitecture.Domain.Core.Bus
 {
